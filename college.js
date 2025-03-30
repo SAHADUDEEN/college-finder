@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ✅ Base API URL (Render Deployment)
-const API_BASE_URL = "https://college-finder-g64v.onrender.com ";
+const API_BASE_URL = "https://college-finder-iohs.onrender.com";
 
 // ✅ Fetch and display college details
 async function fetchCollegeDetails(collegeId) {

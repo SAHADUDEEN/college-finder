@@ -6,7 +6,7 @@ document.getElementById("search-btn").addEventListener("click", async () => {
         return;
     }
 
-    const apiUrl = `https://college-finder-g64v.onrender.com/search_college?name=${encodeURIComponent(searchQuery)}`;
+    const apiUrl = `https://college-finder-iohs.onrender.com/search_college?name=${encodeURIComponent(searchQuery)}`;
 
     try {
         const response = await fetch(apiUrl);
