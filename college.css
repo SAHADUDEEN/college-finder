@@ -67,7 +67,7 @@ body{
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column; /* Stack elements vertically */
-        height: auto; /* Allow height to adjust dynamically */
+        height: auto; 
     }
 
     .college-info {
@@ -76,12 +76,12 @@ body{
 
     .college-image {
         width: 100%; /* Take full width */
-        height: auto; /* Adjust height dynamically */
-        margin-top: 20px; /* Add spacing from college info */
+        height: auto; 
+        margin-top: 20px; 
     }
 
     .college-image img {
-        width: 70; /* Make image responsive */
+        width: 70%; /* Make image responsive */
         height: auto;
         border-radius: 15px; /* Reduce border radius for better look */
     }
