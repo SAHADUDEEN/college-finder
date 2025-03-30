@@ -11,23 +11,23 @@ document.getElementById("search-btn").addEventListener("click", async () => {
     try {
         const response = await fetch(apiUrl);
         
-        // ✅ Check if the response is OK (status 200)
+        //  Check if the response is OK (status 200)
         if (!response.ok) {
             throw new Error(`Server responded with ${response.status}`);
         }
 
         const data = await response.json();
-        console.log("🔍 Search Response:", data); // ✅ Debugging log
+        console.log("Search Response:", data); 
 
         if (Array.isArray(data) && data.length > 0) {
-            // ✅ If multiple results, use the first one
+            // If multiple results, use the first one
             window.location.href = `college.html?id=${data[0].id}`;
         } else {
             alert("College not found. Please try again.");
         }
 
     } catch (error) {
-        console.error("❌ Error searching for college:", error);
+        console.error("Error searching for college:", error);
         alert("An error occurred while searching. Please try again later.");
     }
 });
