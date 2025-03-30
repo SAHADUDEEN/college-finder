@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Details</title>
+    <link rel="stylesheet" href="college.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="college-info">
+            <h1 id="collegeName"></h1>
+            <p id="collegeInfo"></p>
+
+            <h2>Courses Offered</h2>
+            <table id="courseTable" border="1">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>List of Courses</th>
+                        <th>Fees Per Year</th>
+                        <th>Eligibility</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Course details will be dynamically inserted here -->
+                </tbody>
+            </table>
+            
+            <!-- Message when no courses are available -->
+            <p id="noCoursesMessage" style="display: none; color: red;">No courses available.</p>
+            
+
+            <br>
+
+            <a href="index.html">Back to Search</a>
+        </div>
+
+        <div class="college-image">
+            <img id="collegeImage" src="" alt="College Image"  class="college-image">
+        </div>
+    </div>
+    <script src="college.js"></script>
+</body>
+</html>
+

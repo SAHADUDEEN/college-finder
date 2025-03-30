@@ -1,0 +1,94 @@
+body{
+    background-color: #f3f5f2;
+    border: 3px solid #000000;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.college-info {
+    width: 60%;
+    padding: 20px;
+    line-height: 1.8;
+    overflow-y: auto;
+    
+    
+}
+
+.college-image {
+    width: 35%;
+    height: 100vh;
+}
+
+.college-image img {
+    width: 90%;
+    height: 100%;
+    border-radius: 50px;
+    margin-left: 50px;
+    object-fit: cover;
+    display: block;
+}
+ 
+/* Table Styling */
+#courseTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Row */
+#courseTable thead tr {
+    background-color: blue;
+    color: white;
+    text-align: left;
+}
+
+/* Table Headers */
+#courseTable th, #courseTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+/* Alternate Row Colors */
+#courseTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover Effect */
+#courseTable tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Allow height to adjust dynamically */
+    }
+
+    .college-info {
+        width: 90%; 
+    }
+
+    .college-image {
+        width: 100%; /* Take full width */
+        height: auto; /* Adjust height dynamically */
+        margin-top: 20px; /* Add spacing from college info */
+    }
+
+    .college-image img {
+        width: 70; /* Make image responsive */
+        height: auto;
+        border-radius: 15px; /* Reduce border radius for better look */
+    }
+}
+
+
+
+
+
+
