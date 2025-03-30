@@ -1,16 +1,16 @@
-   // ✅ Load environment variables
+   //  Load environment variables
 require("dotenv").config();
 
-// ✅ Import dependencies
+//  Import dependencies
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 
-// ✅ Initialize Express app
+//  Initialize Express app
 const app = express();
 app.use(cors());
 
-// ✅ Database Configuration (Clever Cloud MySQL)
+//  Database Configuration (Clever Cloud MySQL)
 const db = mysql.createPool({
     host: process.env.MYSQL_ADDON_HOST,
     user: process.env.MYSQL_ADDON_USER,
@@ -22,29 +22,29 @@ const db = mysql.createPool({
     queueLimit: 0
 });
 
-// ✅ Check Database Connection
+// Check Database Connection
 db.getConnection((err, connection) => {
     if (err) {
-        console.error("❌ Database connection error:", err);
+        console.error(" Database connection error:", err);
     } else {
-        console.log("✅ Connected to Clever Cloud MySQL Database");
+        console.log(" Connected to Clever Cloud MySQL Database");
         connection.release();
     }
 });
 
-// ✅ Prevent MySQL from closing idle connections
+//  Prevent MySQL from closing idle connections
 setInterval(() => {
     db.query("SELECT 1", (err) => {
         if (err) console.error("MySQL Keep-Alive Error:", err.message);
     });
 }, 60000); // Runs every 60 seconds (1 minute)
 
-// ✅ Root Route
+//  Root Route
 app.get("/", (req, res) => {
-    res.send("🎉 API is running! Use endpoints like /colleges/:id or /search_college");
+    res.send("API is running! Use endpoints like /colleges/:id or /search_college");
 });
 
-// ✅ Fetch College by ID
+// Fetch College by ID
 app.get("/colleges/:id", (req, res) => {
     const collegeId = req.params.id;
     db.query("SELECT * FROM colleges WHERE id = ?", [collegeId], (err, results) => {
@@ -56,7 +56,7 @@ app.get("/colleges/:id", (req, res) => {
     });
 });
 
-// ✅ Search College by Name
+//  Search College by Name
 app.get("/search_college", (req, res) => {
     const collegeName = req.query.name;
     if (!collegeName) return res.status(400).json({ error: "College name is required" });
@@ -70,7 +70,7 @@ app.get("/search_college", (req, res) => {
     });
 });
 
-// ✅ Fetch Courses by College ID
+// Fetch Courses by College ID
 app.get("/courses", (req, res) => {
     const collegeId = req.query.college_id;
     if (!collegeId) return res.status(400).json({ error: "College ID is required" });
@@ -84,10 +84,10 @@ app.get("/courses", (req, res) => {
     });
 });
 
-// ✅ Start the Server
+// Start the Server
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
 
 
